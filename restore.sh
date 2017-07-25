@@ -10,14 +10,14 @@ REPO=${5:-'borg'}
 if [ -z $SOURCE ]; then
     echo "** Source: nothing specified (mounted volume?)"
 else
-    echo "** Source: EFS '$EFS'"
+    echo "** Source: EFS '$SOURCE'"
     mount -t nfs4 -o nfsvers=4.1,ro,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 $SOURCE:/ /mnt/source
 fi
 
-if [ -z $3 ]; then
+if [ -z $BACKUP ]; then
     echo "** Backup: nothing specified (mounted volume?)"
 else
-    echo "** Backup: EFS '$EFS'"
+    echo "** Backup: EFS '$BACKUP'"
     mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 $BACKUP:/ /mnt/backup
 fi
 

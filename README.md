@@ -37,3 +37,7 @@ With:
  - `folder name`: the name of the folder of the original EFS filesystem to restore. If unspecified, will be asked interactively
  - `archive`: the name of the archive to restore. If unspecified, will be asked interactively
  - `repo name`: the repository name to use in the backup destination. `borg` per default
+
+ ## Note
+
+ To be able to mount the EFS filesystem, the container may need to be run in *privileged* mode, or with the option `--cap-add SYS_ADMIN`
