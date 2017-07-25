@@ -40,4 +40,10 @@ With:
 
  ## Note
 
- To be able to mount the EFS filesystem, the container may need to be run in *privileged* mode, or with the option `--cap-add SYS_ADMIN`
+ To be able to mount the **EFS** filesystem, the container may need to be run in *privileged* mode, or with the option `--cap-add SYS_ADMIN`.
+ 
+ The most convenient way to run it on an **EC2 server** belonging to an **ECS cluster** is certainly to run the following code at instance creation (see **Instance Advanced Data**):
+
+      echo 'alias efs-restore="docker run -ti --cap-add SYS_ADMIN --rm ndegardin/efs-borg-restore tr1b4l fs-71a92d38.efs.us-east-1.amazonaws.com fs-da199d93.efs.us-east-1.amazonaws.com"' > /home/ec2-user/.bash_profile 
+
+Later on, connecting through **SSH** to one of these servers, and running `efs-restore` will run the restoration app.
