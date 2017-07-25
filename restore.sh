@@ -3,9 +3,9 @@
 export BORG_PASSPHRASE=$1
 SOURCE=$2
 BACKUP=$3
-DIRECTORY=$3
-RECORD=$4
-REPO=${5:-'borg'}
+DIRECTORY=$4
+RECORD=$5
+REPO=${6:-'borg'}
 
 if [ -z $SOURCE ]; then
     echo "** Source: nothing specified (mounted volume?)"
