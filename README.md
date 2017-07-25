@@ -1,10 +1,10 @@
 # EFS Borg Restore image
 
-[`degardinn/efs-borg-restore`](https://hub.docker.com/r/degardinn/efs-borg-restore/)
+[`ndegardin/efs-borg-restore`](https://hub.docker.com/r/ndegardin/efs-borg-restore/)
 
 An image to restore the content of an [AWS EFS](https://aws.amazon.com/efs/) cluster to another [AWS EFS](https://aws.amazon.com/efs/) cluster using the [Borg backup](https://borgbackup.readthedocs.io/) tool.
 
-The backups must have been made with the [`degardinn/efs-borg-backup`](https://hub.docker.com/r/degardinn/efs-borg-backup/) container.  
+The backups must have been made with the [`ndegardin/efs-borg-backup`](https://hub.docker.com/r/ndegardin/efs-borg-backup/) container.  
 
 ## Features
 
