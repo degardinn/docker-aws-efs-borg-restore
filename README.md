@@ -1,10 +1,10 @@
 # EFS Borg Restore image
 
-[`ndegardin/efs-borg-restore`](https://hub.docker.com/r/ndegardin/efs-borg-restore/)
+[`ndegardin/aws-efs-borg-restore`](https://hub.docker.com/r/ndegardin/aws-efs-borg-restore/)
 
-An image to restore the content of an [AWS EFS](https://aws.amazon.com/efs/) cluster to another [AWS EFS](https://aws.amazon.com/efs/) cluster using the [Borg backup](https://borgbackup.readthedocs.io/) tool.
+An image to restore the content of an [AWS EFS](https://aws.amazon.com/efs/) cluster from the [Borg Backup](https://borgbackup.readthedocs.io/) archives stored on another [AWS EFS](https://aws.amazon.com/efs/) cluster.
 
-The backups must have been made with the [`ndegardin/efs-borg-backup`](https://hub.docker.com/r/ndegardin/efs-borg-backup/) container.  
+The backups must have been made with the [`ndegardin/aws-efs-borg-backup`](https://hub.docker.com/r/ndegardin/aws-efs-borg-backup/) container.  
 
 ## Features
 
@@ -42,7 +42,7 @@ With:
 
  To be able to mount the **EFS** filesystem, the container may need to be run in *privileged* mode, or with the option `--cap-add SYS_ADMIN`.
  
- The most convenient way to run it on an **EC2 server** belonging to an **ECS cluster** is certainly to run the following code at instance creation (see **Instance Advanced Data**):
+ The most convenient way to run it on an **EC2 server** belonging to an **ECS cluster** is certainly to run the following code at instance creation (see **EC2 Instance Advanced Data**):
 
       echo 'alias efs-restore="docker run -ti --cap-add SYS_ADMIN --rm ndegardin/efs-borg-restore tr1b4l fs-71a92d38.efs.us-east-1.amazonaws.com fs-da199d93.efs.us-east-1.amazonaws.com"' > /home/ec2-user/.bash_profile 
 
